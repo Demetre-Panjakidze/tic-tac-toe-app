@@ -1,0 +1,51 @@
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/placeholders";
+@import "./abstracts/variables";
+@import "./base/reset";
+@import "./base/typography";
+
+.btn {
+  cursor: pointer;
+  border: none;
+
+  &-yellow-primary {
+    background-color: $dark-yellow;
+
+    &:hover {
+      background-color: $light-yellow;
+    }
+  }
+
+  &-blue-primary {
+    background-color: $blue;
+
+    &:hover {
+      background-color: $sky-blue;
+    }
+  }
+
+  &-second-yellow-primary {
+    background-color: $dark-yellow;
+
+    &:hover {
+      background-color: $light-yellow;
+    }
+  }
+
+  &-gray-primary {
+    background-color: $light-gray;
+
+    &:hover {
+      background-color: $white-gray;
+    }
+  }
+
+  &-reset {
+    background-color: $light-gray;
+
+    &:hover {
+      background-color: $white-gray;
+    }
+  }
+}
