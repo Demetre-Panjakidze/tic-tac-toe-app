@@ -1,13 +1,21 @@
 <div class="homepage">
-  <img src="../../../assets/images/logo.svg" alt="aplication logo" />
+  <img src="assets/images/logo.svg" alt="aplication logo" />
   <div class="mark-choice">
     <h4>pick player 1's mark</h4>
     <div class="choice-div">
-      <div class="x-div" (click)="xClick()" [ngClass]="{ clicked: !oClicked }">
-        <img src="../../../assets/images/icon-x-default.svg" alt="X icon" />
+      <div
+        class="x-div"
+        (click)="xClick()"
+        [ngClass]="{ clicked: !playerService.oClicked }"
+      >
+        <img src="assets/images/icon-x-default.svg" alt="X icon" />
       </div>
-      <div class="o-div" (click)="oClick()" [ngClass]="{ clicked: oClicked }">
-        <img src="../../../assets/images/icon-o-default.svg" alt="O icon" />
+      <div
+        class="o-div"
+        (click)="oClick()"
+        [ngClass]="{ clicked: playerService.oClicked }"
+      >
+        <img src="assets/images/icon-o-default.svg" alt="O icon" />
       </div>
     </div>
     <h5>remember: x goes first</h5>

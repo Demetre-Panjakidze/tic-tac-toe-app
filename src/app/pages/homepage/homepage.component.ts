@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   selector: 'app-homepage',
@@ -6,17 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent {
-  oClicked: boolean = true;
+  constructor(public playerService: PlayerService, public router: Router) {}
+
   xClick() {
-    this.oClicked = false;
+    this.playerService.oClicked = false;
   }
+
   oClick() {
-    this.oClicked = true;
+    this.playerService.oClicked = true;
   }
+
   vsCpu() {
-    console.log(this.oClicked);
+    this.router.navigate(['game-board']);
+    console.log('O clicked:', this.playerService.oClicked);
   }
+
   vsPlayer() {
-    console.log(this.oClicked);
+    this.router.navigate(['game-board']);
+    console.log('O clicked:', this.playerService.oClicked);
   }
 }
