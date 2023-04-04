@@ -1,6 +1,9 @@
 @import "../styles/main.scss";
 nb-layout {
   nb-layout-column {
-    background-color: $dark-blue;
+    background-color: $very-dark-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

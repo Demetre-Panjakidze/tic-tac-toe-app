@@ -1,3 +1,23 @@
-<nb-card>
-  <h2>bla</h2>
-</nb-card>
+<div class="homepage">
+  <img src="../../../assets/images/logo.svg" alt="aplication logo" />
+  <div class="mark-choice">
+    <h4>pick player 1's mark</h4>
+    <div class="choice-div">
+      <div class="x-div" (click)="xClick()" [ngClass]="{ clicked: !oClicked }">
+        <img src="../../../assets/images/icon-x-default.svg" alt="X icon" />
+      </div>
+      <div class="o-div" (click)="oClick()" [ngClass]="{ clicked: oClicked }">
+        <img src="../../../assets/images/icon-o-default.svg" alt="O icon" />
+      </div>
+    </div>
+    <h5>remember: x goes first</h5>
+  </div>
+  <div class="game-choice">
+    <button class="btn btn-yellow-primary" (click)="vsCpu()">
+      <h4>new game (vs cpu)</h4>
+    </button>
+    <button class="btn btn-blue-primary" (click)="vsPlayer()">
+      <h4>new game (vs player)</h4>
+    </button>
+  </div>
+</div>
