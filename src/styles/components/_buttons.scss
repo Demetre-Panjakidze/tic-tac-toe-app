@@ -1,16 +1,13 @@
-@import "./abstracts/functions";
-@import "./abstracts/mixins";
-@import "./abstracts/placeholders";
-@import "./abstracts/variables";
-@import "./base/reset";
-@import "./base/typography";
-
 .btn {
   cursor: pointer;
   border: none;
+  color: $very-dark-blue;
+  text-transform: uppercase;
 
   &-yellow-primary {
     background-color: $dark-yellow;
+    border-radius: 15px;
+    box-shadow: inset 0px -8px 0px $shadow-yellow;
 
     &:hover {
       background-color: $light-yellow;
@@ -19,6 +16,8 @@
 
   &-blue-primary {
     background-color: $blue;
+    border-radius: 15px;
+    box-shadow: inset 0px -8px 0px $shadow-blue;
 
     &:hover {
       background-color: $sky-blue;
@@ -27,6 +26,8 @@
 
   &-second-yellow-primary {
     background-color: $dark-yellow;
+    border-radius: 10px;
+    box-shadow: inset 0px -4px 0px $shadow-yellow;
 
     &:hover {
       background-color: $light-yellow;
@@ -34,7 +35,9 @@
   }
 
   &-gray-primary {
+    border-radius: 10px;
     background-color: $light-gray;
+    box-shadow: inset 0px -4px 0px $shadow-gray;
 
     &:hover {
       background-color: $white-gray;
@@ -42,7 +45,9 @@
   }
 
   &-reset {
+    border-radius: 10px;
     background-color: $light-gray;
+    box-shadow: inset 0px -4px 0px $shadow-gray;
 
     &:hover {
       background-color: $white-gray;
