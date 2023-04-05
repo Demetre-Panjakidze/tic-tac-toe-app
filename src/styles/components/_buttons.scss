@@ -45,6 +45,7 @@
   }
 
   &-reset {
+    aspect-ratio: 1;
     border-radius: 10px;
     background-color: $light-gray;
     box-shadow: inset 0px -4px 0px $shadow-gray;

@@ -11,9 +11,9 @@ import { PlayerService } from 'src/app/services/player.service';
 export class PlaygroundComponent {
   boxesArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   isActiveBox: unknown[] = Array.from({ length: 9 }).fill(false);
+  isHoveredBox: unknown[] = Array.from({ length: 9 }).fill(false);
   Opponent = Opponent;
   Player = Player;
-  hovered: boolean = false;
 
   constructor(public playerService: PlayerService, public router: Router) {}
 
@@ -60,10 +60,10 @@ export class PlaygroundComponent {
     }
   }
 
-  onHover() {
-    this.hovered = true;
+  onHover(boxNumber: number) {
+    this.isHoveredBox[boxNumber] = true;
   }
-  onMouseOut() {
-    this.hovered = false;
+  onMouseOut(boxNumber: number) {
+    this.isHoveredBox[boxNumber] = false;
   }
 }

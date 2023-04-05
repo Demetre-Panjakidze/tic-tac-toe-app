@@ -27,10 +27,10 @@
       *ngFor="let boxNumber of boxesArray"
       class="playground-box box-{{ boxNumber }}"
       [class.active]="isActiveBox[boxNumber]"
-      [class.hovered]="hovered"
+      [class.hovered]="isHoveredBox[boxNumber]"
       (click)="onClickBox('onClickBox' + boxNumber)"
-      (mouseover)="onHover()"
-      (mouseout)="onMouseOut()"
+      (mouseover)="onHover(boxNumber)"
+      (mouseout)="onMouseOut(boxNumber)"
     >
       <img
         src="assets/images/icon-o-outline.svg"
