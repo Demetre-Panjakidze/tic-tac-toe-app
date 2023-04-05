@@ -1,6 +1,84 @@
-<div class="playground">
+<header class="playground">
   <div class="playground-header">
     <img src="assets/images/logo.svg" alt="aplication logo" />
-    <div class="playground-turn"></div>
+    <div class="playground-turn">
+      <img
+        src="assets/images/icon-o-default.svg"
+        alt="O icon"
+        *ngIf="playerService.oTurn"
+      />
+      <img
+        src="assets/images/icon-x-default.svg"
+        alt="x icon"
+        *ngIf="playerService.xTurn"
+      />
+      <p>turn</p>
+    </div>
+    <button class="btn btn-reset">
+      <img
+        src="assets/images/icon-restart.svg"
+        alt="restart icon"
+        (click)="restart()"
+      />
+    </button>
   </div>
-</div>
+  <div class="playground-boxes">
+    <div
+      *ngFor="let boxNumber of boxesArray"
+      class="playground-box box-{{ boxNumber }}"
+      [class.active]="isActiveBox[boxNumber]"
+      [class.hovered]="hovered"
+      (click)="onClickBox('onClickBox' + boxNumber)"
+      (mouseover)="onHover()"
+      (mouseout)="onMouseOut()"
+    >
+      <img
+        src="assets/images/icon-o-outline.svg"
+        alt="O icon"
+        *ngIf="playerService.oTurn"
+      />
+      <img
+        src="assets/images/icon-x-outline.svg"
+        alt="X icon"
+        *ngIf="playerService.xTurn"
+      />
+    </div>
+  </div>
+
+  <div class="playground-stats">
+    <div class="playground-stat stat-1">
+      <h5 *ngIf="playerService.chosenRole == Player.X; else notXLeft">
+        {{
+          playerService.chosenOpponent == Opponent.Cpu ? "x (you)" : "x (p1)"
+        }}
+      </h5>
+      <ng-template #notXLeft>
+        <h5>
+          {{
+            playerService.chosenOpponent == Opponent.Cpu ? "x (cpu)" : "x (p2)"
+          }}
+        </h5>
+      </ng-template>
+      <h3>{{ playerService.userWon }}</h3>
+    </div>
+    <div class="playground-stat stat-2">
+      <h5>ties</h5>
+      <h3>{{ playerService.tie }}</h3>
+    </div>
+    <div class="playground-stat stat-3">
+      <h5 *ngIf="playerService.chosenRole == Player.X; else notXRight">
+        {{
+          playerService.chosenOpponent == Opponent.Cpu ? "o (cpu)" : "o (p2)"
+        }}
+      </h5>
+      <ng-template #notXRight>
+        <h5>
+          {{
+            playerService.chosenOpponent == Opponent.Cpu ? "o (you)" : "o (p1)"
+          }}
+        </h5>
+      </ng-template>
+      <h3>{{ playerService.userLost }}</h3>
+    </div>
+  </div>
+</header>

@@ -1,1 +1,107 @@
 @import "../../../styles/main.scss";
+
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.playground {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+
+  &-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .playground-turn {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      align-items: center;
+      box-shadow: inset 0px -4px 0px $shadow-dark-blue;
+      background-color: $dark-blue;
+      display: flex;
+      gap: 9px;
+      padding: 9px 15px 13px 15px;
+      border-radius: 5px;
+
+      img {
+        width: 16px;
+        aspect-ratio: 1;
+      }
+
+      p {
+        color: $light-gray;
+      }
+    }
+
+    .btn {
+      position: absolute;
+      right: 0;
+      padding: 12.3px;
+    }
+  }
+
+  &-boxes {
+    margin-block: 64px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+
+    .playground-box {
+      width: 96px;
+      aspect-ratio: 1;
+      box-shadow: inset 0px -8px 0px $shadow-dark-blue;
+      border-radius: 10px;
+      background-color: $dark-blue;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.active {
+        box-shadow: inset 0px -4px 0px $shadow-dark-blue;
+        pointer-events: none;
+      }
+
+      img {
+        display: none;
+      }
+
+      &.hovered {
+        img {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &-stats {
+    display: flex;
+    gap: 20px;
+
+    .playground-stat {
+      padding-block: 12px;
+      border-radius: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .stat-1 {
+      background-color: $blue;
+    }
+
+    .stat-2 {
+      background-color: $light-gray;
+    }
+
+    .stat-3 {
+      background-color: $dark-yellow;
+    }
+  }
+}

@@ -6,14 +6,14 @@
       <div
         class="x-div"
         (click)="xClick()"
-        [ngClass]="{ clicked: !playerService.oClicked }"
+        [ngClass]="{ clicked: playerService.chosenRole == Player.X }"
       >
         <img src="assets/images/icon-x-default.svg" alt="X icon" />
       </div>
       <div
         class="o-div"
         (click)="oClick()"
-        [ngClass]="{ clicked: playerService.oClicked }"
+        [ngClass]="{ clicked: playerService.chosenRole == Player.O }"
       >
         <img src="assets/images/icon-o-default.svg" alt="O icon" />
       </div>
