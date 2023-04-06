@@ -9,6 +9,7 @@ import { InvalidLinkComponent } from './pages/invalid-link/invalid-link.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { MessageComponent } from './components/message/message.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     HomepageComponent,
     PlaygroundComponent,
     InvalidLinkComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,

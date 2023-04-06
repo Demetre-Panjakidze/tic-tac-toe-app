@@ -1,4 +1,4 @@
-<header class="playground">
+<div class="playground">
   <div class="playground-header">
     <img src="assets/images/logo.svg" alt="aplication logo" />
     <div class="playground-turn">
@@ -44,7 +44,6 @@
       />
     </div>
   </div>
-
   <div class="playground-stats">
     <div class="playground-stat stat-1">
       <h5 *ngIf="playerService.chosenRole == Player.X; else notXLeft">
@@ -81,4 +80,7 @@
       <h3>{{ playerService.userLost }}</h3>
     </div>
   </div>
-</header>
+  <div class="playground-overlay">
+    <div class="playground-message"></div>
+  </div>
+</div>

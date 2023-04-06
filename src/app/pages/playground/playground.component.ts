@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Player, Opponent } from 'src/app/models/player.model';
 import { PlayerService } from 'src/app/services/player.service';
