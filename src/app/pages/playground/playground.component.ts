@@ -21,7 +21,6 @@ export class PlaygroundComponent {
   constructor(public playerService: PlayerService, public router: Router) {}
 
   restart() {
-    this.messageType = Result.Won;
     this.playerService.tie = 0;
     this.playerService.userWon = 0;
     this.playerService.userLost = 0;
