@@ -2,8 +2,21 @@
   <div class="playground-message">
     <p>oh no, you lost...</p>
     <div class="result">
-      <img src="assets/images/icon-x-default.svg" alt="X icon" />
-      <h2>takes the round</h2>
+      <img
+        [attr.src]="urlMaker()"
+        alt="icon"
+        [ngStyle]="{
+          filter:
+            playerService.chosenRole == player.X ? oImageColor : xImageColor
+        }"
+      />
+      <h2
+        [ngStyle]="{
+          color: playerService.chosenRole == player.X ? '#f2b137' : '#31c3bd'
+        }"
+      >
+        takes the round
+      </h2>
     </div>
     <div class="btns">
       <button class="btn btn-gray-primary">

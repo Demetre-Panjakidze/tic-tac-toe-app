@@ -13,5 +13,6 @@ export class PlayerService {
   userWon: number = 3;
   userLost: number = 5;
   tie: number = 1;
+
   constructor() {}
 }
