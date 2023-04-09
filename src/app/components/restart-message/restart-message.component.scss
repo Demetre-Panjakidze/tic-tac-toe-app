@@ -18,6 +18,7 @@
     background-color: $dark-blue;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding-block: 40px 48px;
 
@@ -27,19 +28,9 @@
 
     .result {
       margin-block: 16px 24px;
-      display: flex;
-      align-items: center;
-      gap: 9px;
-
-      img {
-        width: 28px;
-        aspect-ratio: 1;
-        filter: invert(62%) sepia(28%) saturate(973%) hue-rotate(129deg)
-          brightness(101%) contrast(87%);
-      }
 
       h2 {
-        color: $blue;
+        color: $light-gray;
       }
     }
 
@@ -69,15 +60,4 @@
       }
     }
   }
-}
-
-.centering {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.yellowcolor {
-  color: $dark-yellow;
 }

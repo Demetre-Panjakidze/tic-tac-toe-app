@@ -2,10 +2,6 @@
 
 :host {
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .playground {
@@ -14,6 +10,7 @@
   max-width: 460px;
   height: 100%;
   padding: 8px;
+  margin: 0 auto;
 
   &-header {
     position: relative;
@@ -121,29 +118,6 @@
       background-color: $dark-yellow;
     }
   }
-
-  &-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba($shadow-dark-blue, 0.5);
-    // width: 100%;
-    // height: 100vh;
-    // margin: 0;
-    // overflow: hidden;
-
-    .playground-message {
-      width: 100%;
-      height: 288px;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      background-color: red;
-    }
-  }
 }
 
 @media (min-width: 768px) {
@@ -169,12 +143,6 @@
 
     &-boxes {
       margin-top: 0;
-    }
-
-    &-overlay {
-      .playground-message {
-        height: 266px;
-      }
     }
   }
 }

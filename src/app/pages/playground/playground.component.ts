@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Result } from 'src/app/models/gameResult.model';
 import { Player, Opponent } from 'src/app/models/player.model';
 import { PlayerService } from 'src/app/services/player.service';
 
@@ -14,10 +15,13 @@ export class PlaygroundComponent {
   isHoveredBox: unknown[] = Array.from({ length: 9 }).fill(false);
   Opponent = Opponent;
   Player = Player;
+  messageType: Result | undefined;
+  result = Result;
 
   constructor(public playerService: PlayerService, public router: Router) {}
 
   restart() {
+    this.messageType = Result.Restart;
     this.playerService.tie = 0;
     this.playerService.userWon = 0;
     this.playerService.userLost = 0;
@@ -63,6 +67,7 @@ export class PlaygroundComponent {
   onHover(boxNumber: number) {
     this.isHoveredBox[boxNumber] = true;
   }
+
   onMouseOut(boxNumber: number) {
     this.isHoveredBox[boxNumber] = false;
   }

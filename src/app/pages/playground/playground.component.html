@@ -80,7 +80,20 @@
       <h3>{{ playerService.userLost }}</h3>
     </div>
   </div>
-  <div class="playground-overlay">
-    <div class="playground-message"></div>
-  </div>
+  <app-restart-message
+    [messageType]="messageType"
+    *ngIf="messageType == result.Restart; else notRestart"
+  ></app-restart-message>
+  <ng-template #notRestart>
+    <app-tie-message
+      [messageType]="messageType"
+      *ngIf="messageType == result.Tie; else notTie"
+    ></app-tie-message>
+  </ng-template>
+  <ng-template #notTie>
+    <!-- <app-tie-message
+    [messageType]="messageType"
+    *ngIf="messageType == result.Tie; else notTie"
+  ></app-tie-message> -->
+  </ng-template>
 </div>

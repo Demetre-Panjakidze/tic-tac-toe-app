@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { MessageComponent } from './components/message/message.component';
+import { RestartMessageComponent } from './components/restart-message/restart-message.component';
+import { TieMessageComponent } from './components/tie-message/tie-message.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { MessageComponent } from './components/message/message.component';
     PlaygroundComponent,
     InvalidLinkComponent,
     MessageComponent,
+    RestartMessageComponent,
+    TieMessageComponent,
   ],
   imports: [
     BrowserModule,
