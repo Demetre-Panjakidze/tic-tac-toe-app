@@ -23,14 +23,10 @@ export class HomepageComponent {
   vsCpu() {
     this.router.navigate(['game-board']);
     this.playerService.chosenOpponent = Opponent.Cpu;
-    console.log('current role:', this.playerService.chosenRole);
-    console.log('current opponent:', this.playerService.chosenOpponent);
   }
 
   vsPlayer() {
     this.router.navigate(['game-board']);
     this.playerService.chosenOpponent = Opponent.Player;
-    console.log('current role:', this.playerService.chosenRole);
-    console.log('current opponent:', this.playerService.chosenOpponent);
   }
 }

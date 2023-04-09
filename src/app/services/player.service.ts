@@ -10,9 +10,9 @@ export class PlayerService {
   oTurn: boolean = false;
   xTurn: boolean = true;
 
-  userWon: number = 3;
-  userLost: number = 5;
-  tie: number = 1;
+  userWon: number = 0;
+  userLost: number = 0;
+  tie: number = 0;
 
   constructor() {}
 }

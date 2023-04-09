@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Result } from 'src/app/models/gameResult.model';
 import { Player, Opponent } from 'src/app/models/player.model';
@@ -9,7 +9,7 @@ import { PlayerService } from 'src/app/services/player.service';
   templateUrl: './playground.component.html',
   styleUrls: ['./playground.component.scss'],
 })
-export class PlaygroundComponent {
+export class PlaygroundComponent implements OnInit {
   boxesArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   isActiveBox: unknown[] = Array.from({ length: 9 }).fill(false);
   isHoveredBox: unknown[] = Array.from({ length: 9 }).fill(false);
@@ -20,13 +20,17 @@ export class PlaygroundComponent {
 
   constructor(public playerService: PlayerService, public router: Router) {}
 
+  ngOnInit() {
+    this.playerService.chosenOpponent = undefined;
+    this.playerService.chosenRole = Player.O;
+  }
+
   restart() {
-    this.playerService.tie = 0;
-    this.playerService.userWon = 0;
-    this.playerService.userLost = 0;
+    this.messageType = Result.Restart;
   }
 
   onClickBox(box: string) {
+    this.playerService.userWon++;
     this.playerService.oTurn = !this.playerService.oTurn;
     this.playerService.xTurn = !this.playerService.xTurn;
 
