@@ -80,6 +80,7 @@
       <h3>{{ playerService.userLost }}</h3>
     </div>
   </div>
+
   <app-restart-message
     [messageType]="messageType"
     *ngIf="messageType == result.Restart; else notRestart"
@@ -91,9 +92,12 @@
     ></app-tie-message>
   </ng-template>
   <ng-template #notTie>
-    <!-- <app-tie-message
-    [messageType]="messageType"
-    *ngIf="messageType == result.Tie; else notTie"
-  ></app-tie-message> -->
+    <app-won-message
+      [messageType]="messageType"
+      *ngIf="messageType == result.Won; else notWon"
+    ></app-won-message>
+  </ng-template>
+  <ng-template #notWon>
+    <app-lost-message [messageType]="messageType"></app-lost-message>
   </ng-template>
 </div>

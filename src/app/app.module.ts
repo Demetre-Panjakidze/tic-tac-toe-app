@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
@@ -9,9 +8,10 @@ import { InvalidLinkComponent } from './pages/invalid-link/invalid-link.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { MessageComponent } from './components/message/message.component';
 import { RestartMessageComponent } from './components/restart-message/restart-message.component';
 import { TieMessageComponent } from './components/tie-message/tie-message.component';
+import { WonMessageComponent } from './components/won-message/won-message.component';
+import { LostMessageComponent } from './components/lost-message/lost-message.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +19,10 @@ import { TieMessageComponent } from './components/tie-message/tie-message.compon
     HomepageComponent,
     PlaygroundComponent,
     InvalidLinkComponent,
-    MessageComponent,
     RestartMessageComponent,
     TieMessageComponent,
+    WonMessageComponent,
+    LostMessageComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding-block: 40px 48px;
 
     p {
@@ -28,9 +27,19 @@
 
     .result {
       margin-block: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      img {
+        width: 28px;
+        aspect-ratio: 1;
+        filter: invert(62%) sepia(28%) saturate(973%) hue-rotate(129deg)
+          brightness(101%) contrast(87%);
+      }
 
       h2 {
-        color: $light-gray;
+        color: $blue;
       }
     }
 
@@ -50,6 +59,14 @@
     .playground-message {
       height: 266px;
       padding-block: 45px;
+
+      .result {
+        gap: 24px;
+
+        img {
+          width: 64px;
+        }
+      }
     }
   }
 }

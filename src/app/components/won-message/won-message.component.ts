@@ -2,10 +2,10 @@ import { Component, Input } from '@angular/core';
 import { Result } from 'src/app/models/gameResult.model';
 
 @Component({
-  selector: 'app-tie-message',
-  templateUrl: './tie-message.component.html',
-  styleUrls: ['./tie-message.component.scss'],
+  selector: 'app-won-message',
+  templateUrl: './won-message.component.html',
+  styleUrls: ['./won-message.component.scss'],
 })
-export class TieMessageComponent {
+export class WonMessageComponent {
   @Input() messageType: Result | undefined;
 }
